@@ -1,0 +1,47 @@
+.tabBlock {
+    height: 220px;
+    background-color: white;
+    position: absolute;
+    top: 53px;
+    overflow: scroll;
+    section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-content: flex-start;
+        position: relative;
+        div {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            padding: 0.8rem 0;
+            padding-left: 1rem;
+            margin: 0.4rem 0.8rem;
+            cursor: pointer;
+            &:hover {
+                background-color: #1b1b1b;
+                color: white;
+            }
+        }
+    }
+}
+
+.selected {
+    background-color: #1b1b1b;
+    color: white;
+}
+
+::-webkit-scrollbar {
+    width: 0.2rem;
+}
+
+::-webkit-scrollbar-track {
+    background: white;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba($color: #1b1b1b, $alpha: 0.1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba($color: #1b1b1b, $alpha: 0.5);
+}

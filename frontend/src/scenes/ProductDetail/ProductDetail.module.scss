@@ -1,0 +1,92 @@
+.container {
+    margin: 2rem;
+}
+
+.product__detail {
+    display: inline-block;
+    width: 60%;
+    padding: 3rem 2rem 1rem 5rem;
+    & > h1 {
+        font-size: 2rem;
+    }
+    & > p {
+        font-size: 0.95rem;
+    }
+    & > ul {
+        list-style: none;
+        li {
+            display: inline-block;
+            width: 40%;
+            border-bottom: solid grey 1px;
+            margin: 0 1rem;
+            padding: 0.5rem 1rem 0.5rem 1rem;
+            position: relative;
+            &::after {
+                content: url("./icons/arrrowDown.svg");
+                position: absolute;
+                right: 1rem;
+            }
+        }
+    }
+}
+
+.price {
+    font-size: 1.2rem;
+    margin: 2rem 1rem;
+}
+.addToBag {
+    margin: 2rem 0;
+    button {
+        position: relative;
+        left: 70%;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+}
+
+.details {
+    & > ul {
+        list-style: none;
+        li {
+            &:first-child {
+                &::after {
+                    content: "";
+                    width: 0.125rem;
+                    height: 1.25rem;
+                    background-color: #c6c6c6;
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    transform: translateY(-50%);
+                }
+            }
+            font-size: 1.1rem;
+            display: inline-block;
+            padding: 1rem;
+            cursor: pointer;
+            position: relative;
+        }
+    }
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.detail__block {
+    margin-left: 1rem;
+    ul {
+        margin-top: 1rem;
+        padding-left: 2rem;
+        li {
+            font-size: 0.95rem;
+        }
+    }
+}
+
+.carousel {
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
+    background-color: white;
+}

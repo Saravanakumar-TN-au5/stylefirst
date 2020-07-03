@@ -5,22 +5,26 @@ const connectDB = require('./db/connectDB');
 const session = require('express-session');
 const authorize = require('./middlewares/authorize');
 const signRoutes = require('./routes/signRoutes');
+const prodRoutes = require('./routes/productRoutes');
 
 const app = express();
 connectDB();
+app.use(cors({
+    credentials:true,
+    origin: ['http://localhost:3000']
+}));
+app.use(express.json());
 app.use(session({
-    secret: '43^tgdak6(',
+    secret: '43^tgdak6',
     saveUninitialized: false,
     resave: false,
     cookie: {
         path: '/',
-        httpOnly: true,
-        maxAge: 1000 * 300
+        httpOnly: true
     }
 }));
-app.use(cors());
-app.use(express.json());
-app.use(authorize);
+//app.use(authorize);
 app.use(signRoutes);
+app.use(prodRoutes);
 
 app.listen(process.env.PORT);

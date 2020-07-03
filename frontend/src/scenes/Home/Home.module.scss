@@ -1,0 +1,32 @@
+.mainContent {
+    margin: 2rem;
+}
+
+.mainContent__nav {
+    width: 100%;
+    background-color: #1b1b1b;
+    display: flex;
+    justify-content: center;
+    button {
+        background-color: transparent;
+        color: white;
+        border: none;
+        font-size: 1.875rem;
+        margin: 1rem 0;
+        padding: 0 1rem;
+        cursor: pointer;
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.vr {
+    display: inline-block;
+    width: 1px;
+    background-color: white;
+}
+
+.btn--focus {
+    font-weight: 700;
+}

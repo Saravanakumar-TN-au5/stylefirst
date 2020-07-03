@@ -3,11 +3,16 @@ const mongoose = require('mongoose');
 const URI = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0-dn9sr.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 
 const connectDB = () => {
-    mongoose.connect(URI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useCreateIndex: true
-    });
+    try {
+        mongoose.connect(URI, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            useCreateIndex: true
+        });
+        
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 module.exports = connectDB;

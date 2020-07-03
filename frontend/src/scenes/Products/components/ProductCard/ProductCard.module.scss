@@ -1,0 +1,17 @@
+.productCard__container {
+    width: 22%;
+    margin: 2rem 0;
+    img {
+        width: 100%;
+        background-color: white;
+    }
+    small {
+        padding-left: 1rem;
+        color: grey;
+        font-size: 0.7rem;
+    }
+    h4 {
+        padding-left: 1rem;
+        font-size: 0.8rem;
+    }
+}

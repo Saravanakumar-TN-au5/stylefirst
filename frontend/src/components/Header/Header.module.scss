@@ -1,0 +1,27 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 4;
+    h1 {
+        font-size: 2rem;
+        margin: auto 8%;
+    }
+}
+
+.nav__link {
+    width: 20%;
+    height: 100%;
+    margin-right: 8%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    img {
+        margin: 2%;
+        cursor: pointer;
+    }
+}
