@@ -27,10 +27,10 @@ class Home extends Component {
         let men = {wear: mWear, bag: mBag, shoe: mShoe, wearLink: '/products/men/ready_to_wear', bagLink: '/products/men/bag', shoeLink: '/products/men/shoe'}
         e.target.classList.add(styles['btn--focus'])
         if (e.target.textContent === 'Women'){
-            e.target.nextSibling.classList.remove(styles['btn--focus'])
+            e.target.nextSibling.nextSibling.classList.remove(styles['btn--focus'])
             this.setState({prodNav: wom})
         } else {
-            e.target.previousSibling.classList.remove(styles['btn--focus'])
+            e.target.previousSibling.previousSibling.classList.remove(styles['btn--focus'])
             this.setState({prodNav: men})
         }
     }
@@ -40,6 +40,7 @@ class Home extends Component {
             <section className={styles['mainContent']} style={{position:'relative',top:'80px'}}>
                 <div className={styles['mainContent__nav']}>
                     <button type='button' onClick={(e) => this.toggleTab(e)} className={styles['btn--focus']}>Women</button>
+                    <div className={styles['seperator']}></div>
                     <button type='button' onClick={(e) => this.toggleTab(e)}>Men</button>
                 </div>
                 <ProductNav {...this.state.prodNav}/>

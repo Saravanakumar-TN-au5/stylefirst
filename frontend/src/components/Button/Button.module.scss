@@ -4,6 +4,7 @@
     padding: 0.4rem 2rem;
     cursor: pointer;
     border: none;
+    font-size: 0.875rem;
     &:focus {
         outline: none;
     }
@@ -19,6 +20,7 @@
     cursor: pointer;
     border: solid 1px $col;
     font-weight: 600;
+    font-size: 0.875rem;
     &:focus {
         outline: none;
     }

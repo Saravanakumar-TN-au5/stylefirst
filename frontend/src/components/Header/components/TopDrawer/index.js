@@ -9,17 +9,13 @@ export default function TopDrawer(ChildComponent) {
             setTimeout(() => this.props.toggleTopDrawer(), 0)
         }
 
-        toggleVisible() {
-            this.setState({visible : !this.state.visible})
-        }
-        
         render() {
-           return ( <section className={styles['top-drawer'] +' '+ (this.props.topDrawerVisible ? styles['visible'] : '')}>
-            <ChildComponent {...this.props}/>
-            {/* eslint-disable-next-line */}
-            <div className={styles['close']}
-                onClick={() => this.props.toggleTopDrawer()}>❌</div>
-        </section>);
+            return (<section className={styles['top-drawer'] + ' ' + (this.props.topDrawerVisible ? styles['visible'] : '')}>
+                <ChildComponent {...this.props} />
+                {/* eslint-disable-next-line */}
+                <div className={styles['close']}
+                    onClick={() => this.props.toggleTopDrawer()}>❌</div>
+            </section>);
         }
     }
     const mapStateToProps = (reducState) => {
@@ -29,11 +25,11 @@ export default function TopDrawer(ChildComponent) {
             topDrawerVisible: state.topDrawerVisible
         }
     }
-    
+
     const mapDispatchToProps = (dispatch) => {
         return {
-            toggleTopDrawer : () => dispatch(toggleTopdrawer())
+            toggleTopDrawer: () => dispatch(toggleTopdrawer())
         }
     }
-    return connect(mapStateToProps,mapDispatchToProps)(TopDrawerComp);
+    return connect(mapStateToProps, mapDispatchToProps)(TopDrawerComp);
 }

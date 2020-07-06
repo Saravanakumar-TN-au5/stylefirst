@@ -8,12 +8,14 @@
     margin: 2rem;
     background-color: white;
     h2 {
-        padding: 1rem 0 0 10%;
+        font-size: 1.6rem;
+        font-weight: 600;
+        padding: 1.6rem 0 0 10%;
     }
 }
 
 .register__form {
-    padding: 1rem 0;
+    padding: 0.4rem 0;
     &>div {
         width: 80%;
         margin: 1rem auto;
@@ -39,6 +41,9 @@
 
     .register__form__btn {
         margin-top: 2rem;
+        &>button {
+            font-size: 0.8rem;
+        }
     }
 }
 

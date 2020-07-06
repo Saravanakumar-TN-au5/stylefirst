@@ -38,7 +38,19 @@ const user = new Schema({
     password : {
         type: String,
         required: true
-    }
+    },
+    wishlist : {
+        type: Array,
+        default: []
+    },
+    bag : {
+        type: Array,
+        default: []
+    },
+    orders: [{
+        type: mongoose.SchemaTypes.ObjectId,
+        ref: 'Order'
+    }]
 });
 
 user.pre('save', function (next){

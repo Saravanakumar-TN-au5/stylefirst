@@ -38,7 +38,7 @@ class Register extends Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if (prevState.valids !== this.state.valids){
+        if (!this.state.redirect && prevState.valids !== this.state.valids){
             let flag = true;
             for (let ev in this.state.valids){
                     if (this.state.valids[ev]){ 
@@ -52,6 +52,9 @@ class Register extends Component {
             }
             if (flag) this.setState({allValid: true});
             else this.setState({allValid: false})
+        }
+        if (this.props.isAuthenticated && prevState.isAuthenticated !== this.props.isAuthenticated) {
+            this.setState({redirect: true});
         }
     }
 
@@ -158,7 +161,6 @@ class Register extends Component {
 
     onRegister() {
         this.props.register(this.state.values)
-        this.setState({redirect: true})
     }
 
     renderRedirect(){
@@ -209,8 +211,8 @@ class Register extends Component {
                             <div className={styles['register__form__btn']}>
                                 <Button name='Register' color='btn--dark' type='button' isDisabled={!this.state.allValid}
                                 event={() => this.onRegister()}/>
-                                {this.props.signError ? 
-                                <span className={styles['alert']}>{this.props.signError}</span>:
+                                {this.props.registerError ? 
+                                <span className={styles['alert']}>{this.props.registerError}</span>:
                                 <span></span>
                                 }
                             </div>
@@ -225,7 +227,7 @@ const mapStateToProps = (reducState) => {
     let state = reducState.signReducer;
     return {
         isAuthenticated: state.isAuthenticated,
-        signError: state.signError
+        registerError: state.registerError
     }
 }
 

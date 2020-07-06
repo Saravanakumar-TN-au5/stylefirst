@@ -8,7 +8,7 @@ function Carousel(props) {
         prevIcon={<span aria-hidden="true" className={styles['prev']}/>} 
         nextIcon={<span aria-hidden="true" className={styles['next']}/>}>
             {Object.keys(props.images).map((image) => {
-                return (<CarouselB.Item>
+                return (<CarouselB.Item key={image}>
                 <img
                   className="d-block w-100"
                   src={props.images[image]}

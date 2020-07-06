@@ -14,12 +14,14 @@ controller.register = (req, res) => {
             if (user) {
                 return res.status(400).send({ message: 'Email already exists' });}
             else {
-                console.log(doc)
-                new User(doc).save(function (err) {
+                let userDoc = new User(doc)
+                userDoc.save(function (err) {
                     if (err) throw 'Invalid Data';
-                    req.session.user = { id: doc._id };
+                    req.session.user = { id: userDoc._id };
+                    //req.session.save()
+                    console.log(req.session)
                     return res.status(201).send({
-                        fullname: doc.fullname, email: doc.email, address: doc.address
+                        id:doc._id,fullname: doc.fullname, email: doc.email, address: doc.address
                     });
                 });
             }
@@ -38,8 +40,10 @@ controller.login = (req, res) => {
                 bcrypt.compare(password, doc.password, function (err, result) {
                     if (result) {
                         req.session.user = { id: doc._id }
+                        //req.session.save()
                         return res.status(200).send({
-                            fullname: doc.fullname, email: doc.email, address: doc.address
+                            id:doc._id,fullname: doc.fullname, email: doc.email, address: doc.address,
+                            wishlist: doc.wishlist, bag: doc.bag, orders: doc.orders
                         });
                     }
                     return res.status(400).send({ message: 'Invalid Password' });

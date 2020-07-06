@@ -87,7 +87,7 @@ class LoginBlock extends Component {
                     </form>
                 </div>
                 <div className={styles['register-block']}>
-                    <small className={styles['textlight'] + ' ' + styles.register__caption}>New to Search & Buy?</small>
+                    <small className={styles['textlight'] + ' ' + styles['register__caption']}>New to Stylefirst? Create an account</small>
                     <LinkButton name='Create Account' color='dark' type='link' 
                     link='/register' event={this.props.toggleTopDrawer}/>
                 </div>
@@ -100,7 +100,7 @@ const mapStateToProps = (reducState) => {
     let state = reducState.signReducer;
     return {
         isAuthenticated: state.isAuthenticated,
-        signError: state.signError
+        loginError: state.loginError
     }
 }
 

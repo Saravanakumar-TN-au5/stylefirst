@@ -59,6 +59,9 @@
     right: 1rem;
     top: 50%;
     transform: translateY(-50%);
+    & > button {
+        font-size: 0.8rem;
+    }
 }
 
 .f-count {

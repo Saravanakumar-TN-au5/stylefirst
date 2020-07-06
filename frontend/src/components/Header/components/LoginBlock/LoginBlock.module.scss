@@ -26,6 +26,10 @@
             outline: none;
         }
     }
+    button {
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
 }
 
 .textlight {
@@ -36,7 +40,9 @@
     margin: auto 2rem;
     position: relative;
     .register__caption {
+        width: 200%;
         position: absolute;
         top: -2rem;
+        left: -2.8rem;
     }
 }

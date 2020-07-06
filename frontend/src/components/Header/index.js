@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
-import avatar from './images/avatar_32.png';
-import heart from './images/heart_32.png';
-import bag from './images/bag_32.png';
-import search from './images/search_32.png';
 import styles from './Header.module.scss';
 import TopDrawer from './components/TopDrawer';
 import SearchBlock from './components/SearchBlock';
 import LoginBLock from './components/LoginBlock';
 import ProfileBlock from './components/ProfileBlock';
+import WishlistBlock from './components/WishlistBlock';
+import BagBlock from './components/BagBlock';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
+    myRef = React.createRef()
     state = {
         topComponent : null
+    }
+    componentDidUpdate(prevsProps,prevsState){
+        if (prevsProps.onBag !== this.props.onBag){
+            this.myRef.current.classList.add(styles['animate']);
+            setTimeout(()=> this.myRef.current.classList.remove(styles['animate']), 3000);
+        }
     }
     renderTop(comp) {
         this.setState({topComponent: TopDrawer(comp)});
@@ -22,15 +28,18 @@ class Header extends Component {
         return (
             <header>
             <nav>
-                <h1 className={styles['nav__brand']}>Search & Buy</h1>
+                <Link to='/' styles={{textDecoration: 'none'}}>
+                    <h1 className={styles['nav__brand']}>Stylefirst</h1>
+                </Link>
                 <div className={styles['nav__link']}>
-                    <img src={avatar} width='20' height='20' alt='profile' 
-                        onClick={() => {this.props.isAuthenticated ? 
-                        this.renderTop(ProfileBlock): this.renderTop(LoginBLock)}}/>
-                    <img src={heart} width='20' height='20' alt='wishlist' />
-                    <img src={bag} width='20' height='20' alt='bag' />
-                    <img src={search} width='20' height='20' alt='search'
-                        onClick={() => this.renderTop(SearchBlock)} />
+                    <div className={!this.props.isAuthenticated ? styles['guest']: styles['authuser']}
+                    onClick={() => {this.props.isAuthenticated ? 
+                        this.renderTop(ProfileBlock): this.renderTop(LoginBLock)}}></div>
+                    <div className={this.props.isWishlist ? styles['heart--fill']:styles['heart']}
+                    onClick={() => this.renderTop(WishlistBlock)}></div>
+                    <div ref={this.myRef} className={this.props.isBag?styles['bag--fill']:styles['bag']}
+                    onClick={() => this.renderTop(BagBlock)}></div>
+                    <div className={styles['search']} onClick={() => this.renderTop(SearchBlock)}></div>
                 </div>
                 {Top ? <Top /> : null}
             </nav>
@@ -40,9 +49,14 @@ class Header extends Component {
 }
 
 const mapStateToProps = (reducState) => {
-    let state = reducState.signReducer;
+    let state = {...reducState.signReducer,...reducState.userReducer};
     return {
-        isAuthenticated: state.isAuthenticated
+        isAuthenticated: state.isAuthenticated,
+        isWishlist: state.wishlist.length,
+        isBag: state.bag.length,
+        bag: state.bag,
+        onWishlist: state.onWishlist,
+        onBag: state.onBag
     }
 }
 

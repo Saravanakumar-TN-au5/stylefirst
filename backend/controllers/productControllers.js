@@ -1,3 +1,4 @@
+const ObjectId = require('mongoose').Types.ObjectId;
 const Product = require('./../models/Product');
 const Variant = require('./../models/Variant');
 const controller = {}
@@ -67,15 +68,28 @@ controller.getFilteredProds = (req,res) => {
 
 controller.getProduct = (req, res) => {
     try {
-        let _id = req.params.id;
-        Product.find({_id}).populate('variants.varId')
+        let id = req.params.id;
+        let checkId = ObjectId.isValid(id);
+        let query = checkId ? {_id: id} : {prodCode: id}
+        Product.find(query).populate('variants.varId')
         .then((doc) => {
             return res.status(200).send(doc)
         })
     } catch (error) {
         return res.status(404).send({message: 'Resource not found'})
     }
+}
 
+controller.getProductBulk = (req, res) => {
+    try {
+        let arr = JSON.parse(req.params.prodArr);
+        Product.find({prodCode: {$in: arr}})
+        .then((doc) => {
+            return res.status(200).send(doc)
+        })
+    } catch (error) {
+        return res.status(404).send({message: 'Resource not found'})
+    }
 }
 
 module.exports = controller;

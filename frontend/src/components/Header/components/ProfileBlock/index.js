@@ -20,13 +20,12 @@ class ProfileBlock extends Component {
                 <div className={styles['caption']}>View your account information, orders and products</div>
                 <div className={styles['link-block']}>
                     <div className={styles['links']}>
-                        <LinkButton name='Dashboard' color='dark' link='/dashboard'/>
-                        <LinkButton name='Account Details' color='dark' link='/profile'/>
-                        <LinkButton name='Orders' color='dark' link='/orders'/>
+                        <LinkButton name='Account Details' color='dark' link='/my-account/account-details'/>
+                        <LinkButton name='Orders' color='dark' link='/my-account/orders'/>
                     </div>
                     <div>
                         <Button name='Logout' color='btn__outline--dark' isDisabled={false} type='button'
-                        event={() => this.props.logout()}/>
+                         event={() => this.props.logout()}/>
                     </div>
                 </div>
             </section>
@@ -45,6 +44,7 @@ const mapStateToProps = (reducState) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
+        dispatch: dispatch,
         logout : () => dispatch(logout())
     }
 }

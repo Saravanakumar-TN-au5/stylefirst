@@ -6,6 +6,7 @@ const session = require('express-session');
 const authorize = require('./middlewares/authorize');
 const signRoutes = require('./routes/signRoutes');
 const prodRoutes = require('./routes/productRoutes');
+const userRoutes = require('./routes/userRoutes');
 
 const app = express();
 connectDB();
@@ -16,8 +17,8 @@ app.use(cors({
 app.use(express.json());
 app.use(session({
     secret: '43^tgdak6',
-    saveUninitialized: false,
-    resave: false,
+    saveUninitialized: true,
+    resave: true,
     cookie: {
         path: '/',
         httpOnly: true
@@ -26,5 +27,6 @@ app.use(session({
 //app.use(authorize);
 app.use(signRoutes);
 app.use(prodRoutes);
+app.use(userRoutes);
 
 app.listen(process.env.PORT);
