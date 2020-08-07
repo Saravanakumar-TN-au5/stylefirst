@@ -1,0 +1,32 @@
+.container{
+    width: 22%;
+    margin: 2rem 1.4%;
+    position: relative;
+    display: inline-block;
+    img {
+        width: 100%;
+        background-color: white;
+    }
+    &>h4 {
+        padding-left: 1rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-top: 1rem;
+    }
+}
+
+.icon {
+    &::after {
+        content: '❌';
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 0.8rem;
+        cursor: pointer;
+    }
+}
+
+.price {
+    padding-left: 1rem;
+    font-size: 0.9rem;
+}

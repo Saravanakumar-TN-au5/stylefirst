@@ -1,0 +1,61 @@
+.container {
+    margin-top: 1rem;
+}
+
+.head {
+    margin-left: 1rem;
+    h4 {
+        font-weight: 600;
+    }
+    div {
+        font-size: 0.875rem;
+    }
+}
+
+.name {
+    margin: 1rem 0;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    div {
+        margin: 0.6rem 2rem;
+    }
+}
+
+.name__content{
+    display: flex;
+}
+
+.bold {
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.f-btn {
+    align-self: center;
+}
+
+.address {
+    margin: 1rem 0;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    div {
+        margin: 0.6rem 2rem;
+    }
+}
+
+.address__content {
+    display: flex;
+}
+
+.password {
+    margin: 1rem 0;
+    display: flex;
+    background-color: white;
+    justify-content: space-around;
+    &> div {
+        margin: 2.6rem 0;
+        width: 40%;
+    }
+}

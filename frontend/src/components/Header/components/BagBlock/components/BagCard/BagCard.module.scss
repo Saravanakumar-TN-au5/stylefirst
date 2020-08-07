@@ -1,0 +1,38 @@
+.container {
+    width: 100%;
+    background-color: #282828;
+    margin: 0.5rem 0;
+    color: rgba($color: white, $alpha: 0.8);
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    img {
+        background-color: white;
+        height: auto;
+        width: 68px;
+        margin: 0.3rem;
+    }
+    h6 {
+        font-weight: 600;
+        font-size: 0.875rem;
+    }
+    &>div{
+        font-size: 0.875rem;
+        margin: 0 1.7rem;
+        align-self: center;
+    }
+}
+
+.close {
+    font-size: 0.6rem;
+    position: absolute;
+    right: 0.6rem;
+    top: 0.6rem;
+    cursor: pointer;
+}
+
+.name {
+    &>h6{
+        font-size: 1rem;
+    }
+}

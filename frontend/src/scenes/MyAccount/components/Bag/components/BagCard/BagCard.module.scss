@@ -1,0 +1,85 @@
+.container {
+    width: 60%;
+    background-color: white;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    img {
+        width: 20%;
+    }
+}
+
+.icon {
+    &::after {
+        content: '❌';
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 0.6rem;
+        cursor: pointer;
+    }
+}
+
+.content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.name {
+    padding-left: 2.7rem;
+    margin-top: 1rem;
+    div {
+        font-weight: 600;
+    }
+    small {
+        color: grey;
+    }
+}
+
+.variant {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1.6rem;
+}
+
+.quantity {
+    justify-self: center;
+    align-self: center;
+    width: 26%;
+    padding-left: 3rem;
+    button {
+        outline: none;
+        background: rgba($color: #1b1b1b, $alpha: 0.05);
+        padding: 0 0.4rem;
+        border: none;
+        border-radius: 0.3rem;
+    }
+}
+
+.quantity__btn {
+    padding: 0.4rem 0.1rem;
+    width: 4rem;
+    border-bottom: solid grey 1px;
+    display: flex;
+    justify-content: space-between;
+    button {
+        cursor: pointer;
+    }
+}
+
+.subhead {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.price {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.fs {
+    font-size: 0.82rem;
+}

@@ -1,0 +1,45 @@
+@mixin button($bg, $col) {
+    background-color: $bg;
+    padding: 0.3rem 1rem;
+    border: none;
+    color: $col;
+    border-bottom: solid 1px $col;
+    font-weight: 500;
+    cursor: pointer;
+    &:hover {
+        color: $bg;
+        border-color: $bg;
+    }
+}
+
+.dark {
+    @include button(#1b1b1b, white);
+    position: relative;
+    z-index: 2;
+    display: flex;
+    overflow: hidden;
+}
+
+.light {
+    @include button(white, #1b1b1b);
+    position: relative;
+    z-index: 2;
+    display: flex;
+    overflow: hidden;
+}
+
+.btn--hover{
+    position: absolute;
+    z-index: -1;
+    background: white;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+    transition: all .3s cubic-bezier(.42,0,0,1);
+}
+
+.hover {
+    transform: translateY(0);
+}

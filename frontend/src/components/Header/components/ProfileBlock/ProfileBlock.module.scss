@@ -1,0 +1,25 @@
+.profile-block {
+    width: 80%;
+    margin: auto;
+    h2 {
+        color: white;
+        opacity: 0.3;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1.25rem;
+    }
+    .caption {
+        color: white;
+        margin: 1rem 0;
+    }
+    .link-block {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3rem;
+    }
+    .links {
+        width: 24%;
+        display: flex;
+        justify-content: space-between;
+    }
+}

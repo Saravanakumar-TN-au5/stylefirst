@@ -1,0 +1,56 @@
+.productCard__container {
+    width: 22%;
+    margin: 2rem 0;
+    position: relative;
+    img {
+        width: 100%;
+        background-color: white;
+        cursor: pointer;
+    }
+    small {
+        padding-left: 1rem;
+        color: grey;
+        font-size: 0.7rem;
+    }
+    &>h4 {
+        padding-left: 1rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+}
+
+.icons {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    margin: 0.6rem 1.2rem;
+}
+
+.heart__outline {
+    &::after{
+        content: url('./icon/heart-new.svg');
+        width: 22px;
+        height: 22px;
+        cursor: pointer;
+    }
+}
+
+.heart__fill {
+    &::after{
+        content: url('./icon/heart-fill.svg');
+        width: 22px;
+        height: 22px;
+        cursor: pointer;
+    }
+}
+
+.animate {
+    animation: scale 0.7s 1;
+}
+
+@keyframes scale {
+    from {transform: scale(1);}
+    to {transform: scale(1.4);}
+}

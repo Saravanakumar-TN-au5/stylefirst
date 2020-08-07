@@ -1,0 +1,24 @@
+.container {
+    margin: 1rem 0;
+    position: relative;
+}
+
+.total {
+    padding: 3rem 2rem;
+    width: 34%;
+    background-color: white;
+    margin: 0 2rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    button {
+        margin-top: 1.6rem;
+    }
+}
+
+.flex--btw {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.2rem 1rem;
+}

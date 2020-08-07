@@ -1,0 +1,25 @@
+.search__form {
+    width: 50%;
+    height: 20%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search__field {
+    width: 80%;
+    height: 60%;
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    padding-left: 2rem;
+    border-bottom: solid 2px white;
+    color: white;
+    &::placeholder {
+        color: white;
+    }
+    &:focus {
+        outline: none;
+    }
+}

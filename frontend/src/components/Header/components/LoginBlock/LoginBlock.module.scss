@@ -1,0 +1,48 @@
+.login__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 1rem;
+}
+
+.login__form {
+    width: 30%;
+    input {
+        display: block;
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        font-size: 0.9rem;
+        padding: 0.5rem;
+        padding-left: 0.7rem;
+        border-bottom: solid 2px white;
+        color: white;
+        margin: 1rem 0;
+        &::placeholder {
+            color: white;
+            letter-spacing: normal;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+    button {
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+}
+
+.textlight {
+    color: white;
+}
+
+.register-block {
+    margin: auto 2rem;
+    position: relative;
+    .register__caption {
+        width: 200%;
+        position: absolute;
+        top: -2rem;
+        left: -2.8rem;
+    }
+}

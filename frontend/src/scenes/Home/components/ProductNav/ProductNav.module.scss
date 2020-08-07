@@ -1,0 +1,16 @@
+.productNav {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    div {
+        width: 30%;
+        img {
+            width: 100%;
+        }
+        h2 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            padding: 0.4rem 1.2rem;
+        }
+    }
+}

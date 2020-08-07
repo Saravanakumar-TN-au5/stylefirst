@@ -1,0 +1,41 @@
+.mainContent {
+    margin: 2rem;
+}
+
+.mainContent__nav {
+    width: 100%;
+    background-color: #1b1b1b;
+    display: flex;
+    justify-content: center;
+    button {
+        background-color: transparent;
+        color: white;
+        border: none;
+        font-size: 1.6rem;
+        margin: 0.8rem 0;
+        padding: 0 1rem;
+        cursor: pointer;
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.seperator {
+    width: 0.1rem;
+    height: 1.875rem;
+    background-color: white;
+    position: relative;
+    top: 50%;
+    transform: translateY(50%);
+}
+
+.vr {
+    display: inline-block;
+    width: 1px;
+    background-color: white;
+}
+
+.btn--focus {
+    font-weight: 700;
+}

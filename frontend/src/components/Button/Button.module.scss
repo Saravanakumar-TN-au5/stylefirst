@@ -1,0 +1,46 @@
+@mixin btn($bg, $col){
+    background-color: $bg;
+    color: $col;
+    padding: 0.4rem 2rem;
+    cursor: pointer;
+    border: none;
+    font-size: 0.875rem;
+    &:focus {
+        outline: none;
+    }
+    &:disabled {
+        background-color: rgba($color: $bg, $alpha: 0.7);
+    }
+}
+
+@mixin outlineBtn($bg, $col) {
+    background-color: $bg;
+    color: $col;
+    padding: 0.4rem 2rem;
+    cursor: pointer;
+    border: solid 1px $col;
+    font-weight: 600;
+    font-size: 0.875rem;
+    &:focus {
+        outline: none;
+    }
+    &:disabled {
+        background-color: rgba($color: $bg, $alpha: 0.7);
+    }
+}
+
+.btn--dark {
+    @include btn(#1b1b1b,white);
+}
+
+.btn--light {
+    @include btn(white,#1b1b1b);
+}
+
+.btn__outline--dark {
+    @include outlineBtn(#1b1b1b, white);
+}
+
+.btn__outline--light {
+    @include outlineBtn(white, #1b1b1b);
+}

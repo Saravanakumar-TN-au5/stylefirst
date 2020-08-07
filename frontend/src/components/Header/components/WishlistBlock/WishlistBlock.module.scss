@@ -1,0 +1,15 @@
+.container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: 220px;
+    overflow: auto;
+}
+
+.noprods {
+    color: white;
+    font-size: 1.4rem;
+    align-self: center;
+}

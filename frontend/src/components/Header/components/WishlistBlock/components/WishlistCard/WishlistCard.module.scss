@@ -1,0 +1,49 @@
+.container {
+    width: 46%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    color: rgba($color: white, $alpha: 0.8);
+    background-color: #282828;
+    margin: 0.5rem 0;
+    position: relative;
+    img {
+        background-color: white;
+        height: auto;
+        width: 80px;
+        margin: 0.3rem;
+    }
+}
+
+.name {
+    margin-top: 1rem;
+    flex-grow: 4;
+    margin-left: 0.2rem;
+    & > h6{
+        font-weight: 600;
+    }
+    & > p {
+        font-size: 0.7rem;
+    }
+}
+
+.price {
+    margin-top: 1.3rem;
+    margin-right: 2rem;
+    &>h6{
+        font-size: 0.7rem;
+        font-weight: 500;
+    }
+    p {
+        font-weight: 600;
+    }
+    font-size: 0.7rem;
+}
+
+.close {
+    font-size: 0.6rem;
+    position: absolute;
+    right: 0.4rem;
+    top: 0.4rem;
+    cursor: pointer;
+}
